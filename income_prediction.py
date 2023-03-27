@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 
 def vis_check(data):
@@ -15,8 +14,6 @@ def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
     preds_val = model.predict(val_X)
     mae = mean_absolute_error(val_y, preds_val)
     return mae
-
-# pd.set_option("display.max_columns", None)
 
 # load data onto pandas dataframe
 household_data_path = 'C:/Users/Eo/Desktop/Coding/filipino_household/Family Income and Expenditure.csv'
@@ -42,25 +39,9 @@ household_features = ['Total Food Expenditure',
 X = household_data[household_features]
 vis_check(X)
 
-# ###
-
-# # building the model
-from sklearn.tree import DecisionTreeRegressor
-
-# household_model = DecisionTreeRegressor(random_state=1)
-
-# # fit model
-# household_model.fit(X, y)
-
-# # predict
-# predictions = household_model.predict(X.head())
-# print(predictions)
-
-# ###
-# check mean absolute error with predictions
-
 ###
 
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
 
 # split data into training and validation
